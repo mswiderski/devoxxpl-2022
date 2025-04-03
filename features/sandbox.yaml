@@ -1,0 +1,12 @@
+namespace:
+  key: sandbox
+  name: sandbox
+flags:
+- key: multitenant
+  name: multitenant
+  type: BOOLEAN_FLAG_TYPE
+  enabled: false
+- key: runs-compare
+  name: runs-compare
+  type: VARIANT_FLAG_TYPE
+  enabled: false
