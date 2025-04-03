@@ -32,4 +32,4 @@ flags:
 - key: runs-compare
   name: runs-compare
   type: VARIANT_FLAG_TYPE
-  enabled: false
+  enabled: true
