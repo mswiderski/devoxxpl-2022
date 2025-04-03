@@ -33,3 +33,45 @@ flags:
   name: runs-compare
   type: VARIANT_FLAG_TYPE
   enabled: true
+  variants:
+  - default: true
+    key: one-try
+    name: just one try
+  - key: ten-tries
+    name: 10 trias available
+    attachment:
+      max: 10
+  - key: unlimited
+    name: unlimited-tries
+    attachment:
+      max: -1
+  rules:
+  - segment: essential-plan-one-tenant
+    distributions:
+    - variant: unlimited
+      rollout: 100
+  - segment: essential-plan
+    distributions:
+    - variant: ten-tries
+      rollout: 100
+segments:
+- key: essential-plan
+  name: essential-plan
+  constraints:
+  - type: STRING_COMPARISON_TYPE
+    property: plan
+    operator: eq
+    value: essential
+  match_type: ALL_MATCH_TYPE
+- key: essential-plan-one-tenant
+  name: essential-plan-one-tenant
+  constraints:
+  - type: STRING_COMPARISON_TYPE
+    property: plan
+    operator: eq
+    value: essential
+  - type: STRING_COMPARISON_TYPE
+    property: tenantId
+    operator: eq
+    value: "12345"
+  match_type: ALL_MATCH_TYPE
