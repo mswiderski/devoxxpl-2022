@@ -1,0 +1,10 @@
+flags:
+- key: new-contact-page
+  name: New Contact Page
+  description: Show users our Beta contact page
+  enabled: true
+  variants:
+  - key: blue
+    name: Blue
+  - key: green
+    name: Green
