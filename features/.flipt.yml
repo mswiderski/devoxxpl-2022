@@ -1,10 +1,35 @@
+version: "1.4"
+namespace:
+  key: default
+  name: Default
+  description: Default namespace
+---
+namespace:
+  key: production
+  name: production
+---
+namespace:
+  key: staging
+  name: staging
 flags:
-- key: new-contact-page
-  name: New Contact Page
-  description: Show users our Beta contact page
-  enabled: true
-  variants:
-  - key: blue
-    name: Blue
-  - key: green
-    name: Green
+- key: runs-compare
+  name: runs-compare
+  type: VARIANT_FLAG_TYPE
+  enabled: false
+- key: multitenant
+  name: multitenant
+  type: BOOLEAN_FLAG_TYPE
+  enabled: false
+---
+namespace:
+  key: sandbox
+  name: sandbox
+flags:
+- key: multitenant
+  name: multitenant
+  type: BOOLEAN_FLAG_TYPE
+  enabled: false
+- key: runs-compare
+  name: runs-compare
+  type: VARIANT_FLAG_TYPE
+  enabled: false
