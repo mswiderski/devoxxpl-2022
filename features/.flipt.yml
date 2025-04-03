@@ -5,31 +5,13 @@ namespace:
   description: Default namespace
 ---
 namespace:
-  key: production
-  name: production
+  key: backend
+  name: backend
 ---
 namespace:
   key: staging
   name: staging
-flags:
-- key: runs-compare
-  name: runs-compare
-  type: VARIANT_FLAG_TYPE
-  enabled: true
-- key: multitenant
-  name: multitenant
-  type: BOOLEAN_FLAG_TYPE
-  enabled: false
 ---
 namespace:
   key: sandbox
   name: sandbox
-flags:
-- key: multitenant
-  name: multitenant
-  type: BOOLEAN_FLAG_TYPE
-  enabled: false
-- key: runs-compare
-  name: runs-compare
-  type: VARIANT_FLAG_TYPE
-  enabled: false
